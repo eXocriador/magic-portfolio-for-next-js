@@ -238,3 +238,39 @@ export interface Gallery extends BasePageConfig {
     orientation: string;
   }>;
 }
+
+/**
+ * Contact page configuration.
+ * A lightweight contact page config that extends the base page fields.
+ */
+export interface Contact extends BasePageConfig {
+  // Optional fields for contact page, e.g. address/phone; keep minimal for template
+  contactDetails?: React.ReactNode;
+  /** Structured left card content for the contact page.
+   * Includes short blurb and CTA labels for quick actions.
+   */
+  leftCard?: {
+    blurb?: React.ReactNode;
+    ctaEmailLabel?: string;
+    ctaSecondaryLabel?: string;
+  };
+
+  /** Structured form copy and labels for the right-hand form */
+  form?: {
+    title?: string;
+    description?: React.ReactNode;
+    placeholders?: {
+      name?: string;
+      email?: string;
+      message?: string;
+    };
+    buttons?: {
+      submit?: string;
+      copyEmail?: string;
+    };
+    hints?: {
+      success?: string;
+      validation?: string;
+    };
+  };
+}

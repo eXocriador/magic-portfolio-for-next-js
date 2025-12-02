@@ -1,4 +1,4 @@
-import {
+import type {
   DataStyleConfig,
   DisplayConfig,
   EffectsConfig,
@@ -9,7 +9,7 @@ import {
   SameAsConfig,
   SchemaConfig,
   SocialSharingConfig,
-  StyleConfig,
+  StyleConfig
 } from "@/types";
 import { home } from "./index";
 
@@ -20,55 +20,54 @@ const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/contact": true
 };
 
 const display: DisplayConfig = {
   location: true,
-  time: true,
-  themeSwitcher: true,
+  // time display disabled — clock removed from header
+  time: false,
+  themeSwitcher: true
 };
 
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes: ProtectedRoutesConfig = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true
 };
 
 // Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 
 const heading = Geist({
   variable: "--font-heading",
   subsets: ["latin"],
-  display: "swap",
+  display: "swap"
 });
 
 const body = Geist({
   variable: "--font-body",
   subsets: ["latin"],
-  display: "swap",
+  display: "swap"
 });
 
 const label = Geist({
   variable: "--font-label",
   subsets: ["latin"],
-  display: "swap",
+  display: "swap"
 });
 
 const code = Geist_Mono({
   variable: "--font-code",
   subsets: ["latin"],
-  display: "swap",
+  display: "swap"
 });
 
 const fonts: FontsConfig = {
   heading: heading,
   body: body,
   label: label,
-  code: code,
+  code: code
 };
 
 // default customization applied to the HTML in the main layout.tsx
@@ -82,7 +81,7 @@ const style: StyleConfig = {
   border: "playful", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
-  scaling: "100", // 90 | 95 | 100 | 105 | 110
+  scaling: "100" // 90 | 95 | 100 | 105 | 110
 };
 
 const dataStyle: DataStyleConfig = {
@@ -90,13 +89,13 @@ const dataStyle: DataStyleConfig = {
   mode: "categorical", // categorical | divergent | sequential
   height: 24, // default chart height
   axis: {
-    stroke: "var(--neutral-alpha-weak)",
+    stroke: "var(--neutral-alpha-weak)"
   },
   tick: {
     fill: "var(--neutral-on-background-weak)",
     fontSize: 11,
-    line: false,
-  },
+    line: false
+  }
 };
 
 const effects: EffectsConfig = {
@@ -104,7 +103,7 @@ const effects: EffectsConfig = {
     cursor: false,
     x: 50,
     y: 0,
-    radius: 100,
+    radius: 100
   },
   gradient: {
     display: false,
@@ -115,20 +114,21 @@ const effects: EffectsConfig = {
     height: 50,
     tilt: 0,
     colorStart: "accent-background-strong",
-    colorEnd: "page-background",
+    colorEnd: "page-background"
   },
   dots: {
-    display: true,
+    display: false,
     opacity: 40,
     size: "2",
-    color: "brand-background-strong",
+    color: "brand-background-strong"
   },
   grid: {
+    // grid disabled for a clean star-only background on the homepage
     display: false,
     opacity: 100,
     color: "neutral-alpha-medium",
     width: "0.25rem",
-    height: "0.25rem",
+    height: "0.25rem"
   },
   lines: {
     display: false,
@@ -136,8 +136,8 @@ const effects: EffectsConfig = {
     color: "neutral-alpha-weak",
     size: "16",
     thickness: 1,
-    angle: 45,
-  },
+    angle: 45
+  }
 };
 
 const mailchimp: MailchimpConfig = {
@@ -147,7 +147,7 @@ const mailchimp: MailchimpConfig = {
       cursor: true,
       x: 50,
       y: 0,
-      radius: 100,
+      radius: 100
     },
     gradient: {
       display: true,
@@ -158,20 +158,20 @@ const mailchimp: MailchimpConfig = {
       height: 50,
       tilt: 0,
       colorStart: "accent-background-strong",
-      colorEnd: "static-transparent",
+      colorEnd: "static-transparent"
     },
     dots: {
       display: true,
       opacity: 20,
       size: "2",
-      color: "brand-on-background-weak",
+      color: "brand-on-background-weak"
     },
     grid: {
       display: false,
       opacity: 100,
       color: "neutral-alpha-medium",
       width: "0.25rem",
-      height: "0.25rem",
+      height: "0.25rem"
     },
     lines: {
       display: false,
@@ -179,9 +179,9 @@ const mailchimp: MailchimpConfig = {
       color: "neutral-alpha-medium",
       size: "16",
       thickness: 1,
-      angle: 90,
-    },
-  },
+      angle: 90
+    }
+  }
 };
 
 // default schema data
@@ -190,14 +190,14 @@ const schema: SchemaConfig = {
   type: "Organization",
   name: "Once UI",
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "lorant@once-ui.com"
 };
 
 // social links
 const sameAs: SameAsConfig = {
   threads: "https://www.threads.com/@once_ui",
   linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  discord: "https://discord.com/invite/5EyAQ4eNdS"
 };
 
 // social sharing configuration for blog posts
@@ -212,8 +212,8 @@ const socialSharing: SocialSharingConfig = {
     reddit: false,
     telegram: false,
     email: true,
-    copyLink: true,
-  },
+    copyLink: true
+  }
 };
 
 export {
@@ -228,5 +228,5 @@ export {
   sameAs,
   socialSharing,
   effects,
-  dataStyle,
+  dataStyle
 };

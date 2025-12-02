@@ -5,9 +5,8 @@ export {
   newsletter,
   home,
   about,
-  blog,
   work,
-  gallery,
+  contact
 } from "./content";
 
 export {
@@ -22,5 +21,5 @@ export {
   sameAs,
   socialSharing,
   effects,
-  dataStyle,
+  dataStyle
 } from "./once-ui.config";

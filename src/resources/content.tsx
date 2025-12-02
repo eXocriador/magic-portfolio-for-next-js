@@ -1,21 +1,31 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
+import type {
+  About,
+  Home,
+  Newsletter,
+  Person,
+  Social,
+  Work,
+  Contact
+} from "@/types";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Oleh",
+  lastName: "Tatarynov",
+  name: `Oleh Tatarynov`,
+  role: "Fullstack Web Developer",
+  avatar: "/images/avatar.webp",
+  email: "exocriador@gmail.com",
+  // location: "Oleh Tatarynov", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Ukrainian"], // optional: Leave the array empty if you don't want to display languages
+  // Use a valid IANA time zone string here. 'Europe/Kyiv' is appropriate for Ukraine.
+  location: "Europe/Kyiv"
 };
 
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>My weekly newsletter about creativity and engineering</>
 };
 
 const social: Social = [
@@ -25,33 +35,33 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
+    link: "https://github.com/eXocriador",
+    essential: true
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
+    link: "https://www.linkedin.com/in/exocriador/",
+    essential: true
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
+    name: "Telegram",
+    icon: "telegram",
+    link: "https://t.me/exocriador",
+    essential: false
   },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
-  },
+  // {
+  //   name: "Threads",
+  //   icon: "threads",
+  //   link: "https://www.threads.com/@once_ui",
+  //   essential: true
+  // },
   {
     name: "Email",
     icon: "email",
     link: `mailto:${person.email}`,
-    essential: true,
-  },
+    essential: true
+  }
 ];
 
 const home: Home = {
@@ -72,13 +82,18 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/building-once-ui-a-customizable-design-system"
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
-  ),
+      I'm Selene, a design engineer at{" "}
+      <Text as="span" size="xl" weight="strong">
+        ONCE UI
+      </Text>
+      , where I craft intuitive <br /> user experiences. After hours, I build my
+      own projects.
+    </>
+  )
 };
 
 const about: About = {
@@ -88,25 +103,40 @@ const about: About = {
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
-    subItems: false,
+    subItems: false
   },
   avatar: {
-    display: true,
+    display: true
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com"
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I'm certified Fullstack Web Developer with a passion for transforming
+        complex challenges into simple, elegant web solutions. My work spans
+        digital interfaces with interactive experiences, and the convergence of
+        design and technology.
       </>
-    ),
+    )
+  },
+  studies: {
+    display: true, // set to false to hide this section
+    title: "Studies",
+    institutions: [
+      {
+        name: "GoIT",
+        description: <>Studied fullstack web development.</>
+      },
+      {
+        name: "Build the Future",
+        description: <>Studied online marketing and personal branding.</>
+      }
+    ]
   },
   work: {
     display: true, // set to false to hide this section
@@ -118,13 +148,13 @@ const about: About = {
         role: "Senior Design Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Redesigned the UI/UX for the FLY platform, resulting in a 20%
+            increase in user engagement and 30% faster load times.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+            Spearheaded the integration of AI tools into design workflows,
+            enabling designers to iterate 50% faster.
+          </>
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -132,9 +162,9 @@ const about: About = {
             src: "/images/projects/project-01/cover-01.jpg",
             alt: "Once UI Project",
             width: 16,
-            height: 9,
-          },
-        ],
+            height: 9
+          }
+        ]
       },
       {
         company: "Creativ3",
@@ -142,32 +172,19 @@ const about: About = {
         role: "Lead Designer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Developed a design system that unified the brand across multiple
+            platforms, improving design consistency by 40%.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+            Led a cross-functional team to launch a new product line,
+            contributing to a 15% increase in overall company revenue.
+          </>
         ],
-        images: [],
-      },
-    ],
+        images: []
+      }
+    ]
   },
-  studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
-    institutions: [
-      {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
-    ],
-  },
+
   technical: {
     display: true, // set to false to hide this section
     title: "Technical skills",
@@ -180,8 +197,8 @@ const about: About = {
         tags: [
           {
             name: "Figma",
-            icon: "figma",
-          },
+            icon: "figma"
+          }
         ],
         // optional: leave the array empty if you don't want to display images
         images: [
@@ -189,15 +206,15 @@ const about: About = {
             src: "/images/projects/project-01/cover-02.jpg",
             alt: "Project image",
             width: 16,
-            height: 9,
+            height: 9
           },
           {
             src: "/images/projects/project-01/cover-03.jpg",
             alt: "Project image",
             width: 16,
-            height: 9,
-          },
-        ],
+            height: 9
+          }
+        ]
       },
       {
         title: "Next.js",
@@ -207,16 +224,16 @@ const about: About = {
         tags: [
           {
             name: "JavaScript",
-            icon: "javascript",
+            icon: "javascript"
           },
           {
             name: "Next.js",
-            icon: "nextjs",
+            icon: "nextjs"
           },
           {
             name: "Supabase",
-            icon: "supabase",
-          },
+            icon: "supabase"
+          }
         ],
         // optional: leave the array empty if you don't want to display images
         images: [
@@ -224,81 +241,79 @@ const about: About = {
             src: "/images/projects/project-01/cover-04.jpg",
             alt: "Project image",
             width: 16,
-            height: 9,
-          },
-        ],
-      },
-    ],
-  },
-};
-
-const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+            height: 9
+          }
+        ]
+      }
+    ]
+  }
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  description: `Design and dev projects by ${person.name}`
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
 
-const gallery: Gallery = {
-  path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
+const contact: Contact = {
+  path: "/contact",
+  label: "Contact",
+  title: `Contact – ${person.name}`,
+  description: `I'm available for freelance work, contract roles, and collaborations — let's build something together. Use the contact form or reach out via email or socials.`,
+  contactDetails: (
+    <>
+      <div style={{ marginBottom: 12 }}>
+        <strong>Email</strong>:{" "}
+        <a href={`mailto:${person.email}`}>{person.email}</a>
+      </div>
+      <div style={{ marginBottom: 8 }}>
+        <strong>Location</strong>: {person.location} — typically UTC+2 (EEST)
+      </div>
+      <div style={{ marginBottom: 12 }}>
+        <strong>Availability</strong>: Open to freelance & collaboration,
+        currently accepting limited projects.
+      </div>
+      <div style={{ marginBottom: 12 }}>
+        <strong>Response time</strong>: I usually reply within 48 hours.
+      </div>
+    </>
+  ),
+  leftCard: {
+    blurb: (
+      <>
+        I help teams design and ship delightful experiences — from prototypes to
+        production-grade web apps. If you have an idea, let's talk about scope,
+        timelines, and next steps.
+      </>
+    ),
+    ctaEmailLabel: "Email",
+    ctaSecondaryLabel: "Message via email"
+  },
+  form: {
+    title: "Send a message",
+    description: (
+      <>
+        Prefer email? Use the left button or copy the address — or fill the
+        quick form and open your mail client to send the message.
+      </>
+    ),
+    placeholders: {
+      name: "Your name",
+      email: "Your email",
+      message: "Tell me about your project or what you'd like to talk about..."
     },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
+    buttons: {
+      submit: "Send message",
+      copyEmail: "Copy email"
     },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
+    hints: {
+      success: "Ready — open your mail client to send.",
+      validation: "Please fill required fields (email & message)."
+    }
+  }
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, work, contact };
