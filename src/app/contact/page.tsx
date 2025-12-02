@@ -3,13 +3,9 @@ import {
   Column,
   Heading,
   Text,
-  Button,
   Row,
   Meta,
   Schema,
-  Avatar,
-  Icon,
-  IconButton,
   Background
 } from "@once-ui-system/core";
 import { baseURL, contact, person, social } from "@/resources";
@@ -87,8 +83,8 @@ export default function Contact() {
 
           <Background
             style={{ pointerEvents: "none" }}
-            top="-28"
-            left="-28"
+            top={-28}
+            left={-28}
             width="120"
             height="120"
             radius="full"
