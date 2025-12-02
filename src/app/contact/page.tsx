@@ -82,15 +82,16 @@ export default function Contact() {
           <ContactForm />
 
           <Background
-            style={{ pointerEvents: "none" }}
-            top={-28}
-            left={-28}
-            width="120"
-            height="120"
+            style={{
+              pointerEvents: "none",
+              transform: "translate(-28px, -28px)"
+            }}
+            width={120}
+            height={120}
             radius="full"
             gradient={{
               display: true,
-              opacity: 0.06,
+              opacity: 0.06 as any,
               x: 16,
               y: 16,
               width: 120,
