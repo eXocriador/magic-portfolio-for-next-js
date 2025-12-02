@@ -8,7 +8,7 @@ import {
   Schema,
   Background
 } from "@once-ui-system/core";
-import { baseURL, contact, person, social } from "@/resources";
+import { baseURL, contact, person } from "@/resources";
 import ContactForm from "./ContactForm";
 
 export async function generateMetadata() {
